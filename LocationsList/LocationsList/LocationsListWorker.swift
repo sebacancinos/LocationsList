@@ -54,8 +54,8 @@ class NetworkLocationsFetcher: LocationsListFetcher {
             }
 
             do {
-                let locations = try decoder.decode(LocationsListResponse.self, from: data)
-                return locations.locations
+                let decodedResponse = try decoder.decode(LocationsListResponse.self, from: data)
+                return decodedResponse.locations
             } catch {
                 print("Decoding error: \(error)")
                 throw NetworkError.decodingError(error)
