@@ -57,7 +57,7 @@ struct LocationView: View {
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
-                Text(location.name ?? "Unknown Location")
+                Text(location.name ?? "")
                     .font(.headline)
                 Text("Latitude: \(location.latitude)")
                     .font(.subheadline)
