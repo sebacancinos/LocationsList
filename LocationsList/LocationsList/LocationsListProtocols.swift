@@ -3,11 +3,15 @@ import SwiftUI
 // MARK: - Models
 struct Location: Identifiable, Codable, Equatable {
     let name: String?
-    let lat: Double
-    let long: Double
-    var id: String { name ?? "\(lat),\(long)" }
+    let latitude: Double
+    let longitude: Double
+    var id: String { name ?? "\(latitude),\(longitude)" }
 
-    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case latitude = "lat"
+        case longitude = "long"
+    }
 }
 
 // MARK: - VIP Protocols
@@ -57,5 +61,5 @@ protocol LocationsListRoutingLogic {
 
 // MARK: - Fetch Places
 protocol LocationsListFetcher {
-    func fetchPlaces() async throws -> [Location]
+    func fetchLocations() async throws -> [Location]
 }

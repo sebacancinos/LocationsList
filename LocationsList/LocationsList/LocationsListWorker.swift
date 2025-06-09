@@ -9,12 +9,12 @@ import Foundation
 
 class LocationsListWorker: LocationsListFetcher {
 
-    func fetchPlaces() async throws -> [Location] {
+    func fetchLocations() async throws -> [Location] {
         return [
-            Location(name: "Amsterdam", lat: 52.3547498, long: 4.8339215),
-            Location(name: "Mumbai", lat: 19.0823998, long: 72.8111468),
-            Location(name: "Copenhagen", lat: 55.6713442, long: 12.523785),
-            Location(name: nil, lat: 40.4380638, long: -3.7495758)
+            Location(name: "Amsterdam", latitude: 52.3547498, longitude: 4.8339215),
+            Location(name: "Mumbai", latitude: 19.0823998, longitude: 72.8111468),
+            Location(name: "Copenhagen", latitude: 55.6713442, longitude: 12.523785),
+            Location(name: nil, latitude: 40.4380638, longitude: -3.7495758)
         ]
     }
 }
@@ -32,7 +32,7 @@ enum NetworkError: Error {
 }
 
 class NetworkLocationsFetcher: LocationsListFetcher {
-    func fetchPlaces() async throws -> [Location] {
+    func fetchLocations() async throws -> [Location] {
         let decoder = JSONDecoder()
         guard let url = URL(string: "https://raw.githubusercontent.com/abnamrocoesd/assignment-ios/main/locations.json") else {
             throw NetworkError.invalidURL
@@ -54,8 +54,8 @@ class NetworkLocationsFetcher: LocationsListFetcher {
             }
 
             do {
-                let places = try decoder.decode(LocationsListResponse.self, from: data)
-                return places.locations
+                let locations = try decoder.decode(LocationsListResponse.self, from: data)
+                return locations.locations
             } catch {
                 print("Decoding error: \(error)")
                 throw NetworkError.decodingError(error)

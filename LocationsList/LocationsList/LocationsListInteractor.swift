@@ -18,14 +18,14 @@ class LocationsListInteractor: LocationsListBusinessLogic {
             ))
         
             do {
-                let places = try await worker.fetchPlaces()
+                let locations = try await worker.fetchLocations()
                 // Show loaded data
                 await presenter?.presentLocations(response: LocationsList.FetchLocations.Response(
-                    locations: places,
+                    locations: locations,
                     isLoading: false
                 ))
             } catch {
-                print("Error fetching places: \(error)")
+                print("Error fetching locations: \(error)")
                 // Show error state (empty list)
                 await presenter?.presentLocations(response: LocationsList.FetchLocations.Response(
                     locations: [],
@@ -36,8 +36,7 @@ class LocationsListInteractor: LocationsListBusinessLogic {
     }
 
     func showLocation(request: LocationsList.ShowCustomLocation.Request) {
-        let location = Location(name: nil, lat: request.latitude, long: request.longitude)
-
+        let location = Location(name: nil, latitude: request.latitude, longitude: request.longitude)
         router?.routeToWikipedia(for: location)
     }
 }

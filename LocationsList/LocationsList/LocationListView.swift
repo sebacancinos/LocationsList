@@ -59,9 +59,9 @@ struct LocationView: View {
             VStack(alignment: .leading) {
                 Text(location.name ?? "Unknown Location")
                     .font(.headline)
-                Text("Latitude: \(location.lat)")
+                Text("Latitude: \(location.latitude)")
                     .font(.subheadline)
-                Text("Longitude: \(location.long)")
+                Text("Longitude: \(location.longitude)")
                     .font(.subheadline)
             }
             .padding(.vertical, 4)
@@ -108,7 +108,7 @@ struct LocationsListView: View {
             {
                 List(viewState.locations) { location in
                     LocationView(location: location) {
-                        let req = LocationsList.ShowCustomLocation.Request(latitude: location.lat, longitude: location.long)
+                        let req = LocationsList.ShowCustomLocation.Request(latitude: location.latitude, longitude: location.longitude)
                         interactor.showLocation(request: req)
                     }
                 }
