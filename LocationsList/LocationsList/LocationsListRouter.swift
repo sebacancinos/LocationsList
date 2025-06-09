@@ -10,7 +10,5 @@ class LocationsListRouter: LocationsListRoutingLogic {
         }
 
         UIApplication.shared.open(url)
-
-        print(url.absoluteString)
     }
 } 
