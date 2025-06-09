@@ -31,7 +31,7 @@ class LocationsListPresenterTests: QuickSpec {
                 
                 context("when loaded") {
                     let locations = [
-                        Location(name: "Test", lat: 0.0, long: 0.0)
+                        Location(name: "Test", latitude: 0.0, longitude: 0.0)
                     ]
                     
                     it("should update view state with locations") {

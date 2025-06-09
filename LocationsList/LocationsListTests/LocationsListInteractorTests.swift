@@ -25,7 +25,7 @@ class LocationsListInteractorTests: QuickSpec {
             describe("fetchLocations") {
                 context("when worker returns locations") {
                     let expectedLocations = [
-                        Location(name: "Test", lat: 0.0, long: 0.0)
+                        Location(name: "Test", latitude: 0.0, longitude: 0.0)
                     ]
                     
                     beforeEach {
@@ -60,8 +60,8 @@ class LocationsListInteractorTests: QuickSpec {
                     sut.showLocation(request: request)
                     
                     expect(mockRouter.routedLocation).toNot(beNil())
-                    expect(mockRouter.routedLocation?.lat).to(equal(0.0))
-                    expect(mockRouter.routedLocation?.long).to(equal(0.0))
+                    expect(mockRouter.routedLocation?.latitude).to(equal(0.0))
+                    expect(mockRouter.routedLocation?.longitude).to(equal(0.0))
                 }
             }
         }
@@ -91,7 +91,7 @@ class MockLocationsListWorker: LocationsListFetcher {
     var mockLocations: [Location] = []
     var shouldThrowError = false
     
-    func fetchPlaces() async throws -> [Location] {
+    func fetchLocations() async throws -> [Location] {
         if shouldThrowError {
             throw NSError(domain: "test", code: -1)
         }

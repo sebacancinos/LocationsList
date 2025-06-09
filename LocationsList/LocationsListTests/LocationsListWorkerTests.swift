@@ -11,16 +11,16 @@ class LocationsListWorkerTests: QuickSpec {
                 sut = NetworkLocationsFetcher()
             }
             
-            describe("fetchPlaces") {
+            describe("fetchLocations") {
                 context("when network request succeeds") {
                     it("should return locations") {
                         Task {
-                            let locations = try await sut.fetchPlaces()
+                            let locations = try await sut.fetchLocations()
 
                             expect(locations).toNot(beEmpty())
                             expect(locations.first?.name).toNot(beNil())
-                            expect(locations.first?.lat).toNot(beNil())
-                            expect(locations.first?.long).toNot(beNil())
+                            expect(locations.first?.latitude).toNot(beNil())
+                            expect(locations.first?.longitude).toNot(beNil())
                         }
                     }
                 }
@@ -34,11 +34,11 @@ class LocationsListWorkerTests: QuickSpec {
                 sut = LocationsListWorker()
             }
             
-            describe("fetchPlaces") {
+            describe("fetchLocations") {
                 it("should return default locations") {
                     Task{
-                        let locations = try await sut.fetchPlaces()
-                        
+                        let locations = try await sut.fetchLocations()
+
                         expect(locations).toNot(beEmpty())
                         expect(locations.count).to(equal(4))
                         expect(locations.first?.name).to(equal("Amsterdam"))

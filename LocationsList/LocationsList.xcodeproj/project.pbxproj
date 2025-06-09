@@ -33,7 +33,7 @@
 		7D4B53602DF5E74D0050797B /* LocationsListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationsListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B536A2DF5E74E0050797B /* LocationsListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationsListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8988502DF661970035E283 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7D89885E2DF665B70035E283 /* LocationsList.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationsList.xctestplan; sourceTree = "<group>"; };
+		7D9FA7482DF6EB9200BA112B /* LocationsList.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationsList.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,7 +97,7 @@
 		7D4B534A2DF5E7490050797B = {
 			isa = PBXGroup;
 			children = (
-				7D89885E2DF665B70035E283 /* LocationsList.xctestplan */,
+				7D9FA7482DF6EB9200BA112B /* LocationsList.xctestplan */,
 				7D8988502DF661970035E283 /* README.md */,
 				7D4B53552DF5E7490050797B /* LocationsList */,
 				7D4B53632DF5E74D0050797B /* LocationsListTests */,

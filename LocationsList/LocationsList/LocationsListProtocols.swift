@@ -59,7 +59,7 @@ protocol LocationsListRoutingLogic {
     func routeToWikipedia(for location: Location)
 }
 
-// MARK: - Fetch Places
+// MARK: - Fetch Locations
 protocol LocationsListFetcher {
     func fetchLocations() async throws -> [Location]
 }
