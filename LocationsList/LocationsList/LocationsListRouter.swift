@@ -15,8 +15,6 @@ class LocationsListRouter: LocationsListRoutingLogic {
     }
 
     func routeToWikipedia(for location: Location) {
-        // TODO: Implement Wikipedia navigation
-
         guard let url = wikipediaDeepLink(latitude: location.latitude, longitude: location.longitude) else {
             return
         }
