@@ -22,10 +22,6 @@ enum LocationsList {
             let locations: [Location]
             let isLoading: Bool
         }
-        struct ViewModel {
-            let locations: [Location]
-            let isLoading: Bool
-        }
     }
     
     enum ShowCustomLocation {
@@ -33,12 +29,7 @@ enum LocationsList {
             let latitude: Double
             let longitude: Double
         }
-        struct Response {
-            let location: Location
-        }
-        struct ViewModel {
-            let location: Location
-        }
+        struct Response {}
     }
 }
 
